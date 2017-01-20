@@ -1,13 +1,24 @@
 ---
 layout: post
-title:  "Struts2 示例"
+title:  "Struts2 的 XML 配置与注解配置"
 date:   2016-07-05 16:00:43 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Struts
 ---
 
-**1. web.xml配置**
+Struts2 使用比较繁琐（跟Spring MVC比），所以记录一下Struts2的配置和使用步骤，以便以后查阅参考。
 
-{%codeblock xml%}
+<!-- more -->
+
+## 1. 使用Struts2渲染jsp页面
+
+### 1.1 web.xml配置
+
+{%codeblock web.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,9 +38,9 @@ version="3.1">
 </web-app>
 {%endcodeblock%}
 
-**2. struts配置（文件名必须是struts..xml）**
+### 1.2 struts配置（文件名必须是struts.xml）
 
-{%codeblock xml%}
+{%codeblock struts.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
@@ -43,13 +54,13 @@ version="3.1">
 </struts>
 {%endcodeblock%}
 
-**3. 运行服务器，打开/home看效果**
+### 1.3 运行服务器，访问/home查看运行结果
 
-# 使用Action
+## 2. Struts2中Action的使用
 
-**1. struts配置（文件名必须是struts..xml）**
+### 2.1 struts配置
 
-{%codeblock xml%}
+{%codeblock web.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
@@ -68,9 +79,9 @@ version="3.1">
 </struts>
 {%endcodeblock%}
 
-**2. action文件**
+### 2.2 action文件
 
-{%codeblock java%}
+{%codeblock HelloStrutsAction.java lang:java%}
 package cn.corpro.iot.server.action;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -87,13 +98,13 @@ return System.currentTimeMillis() % 2 == 0 ? SUCCESS : ERROR;
 }
 {%endcodeblock%}
 
-**3. 运行服务器，打开/helloStruts看效果**
+### 2.3 运行服务器，打开/helloStruts看效果**
 
-# 使用注解
+## 3. 在Struts2中使用注解
 
-**1. 添加依赖，注解需要struts2-convention-plugin**
+### 3.1 添加依赖，注解需要struts2-convention-plugin**
 
-{%codeblock xml%}
+{%codeblock pom.xml lang:xml%}
 <dependency>
 <groupId>org.apache.struts</groupId>
 <artifactId>struts2-convention-plugin</artifactId>
@@ -101,9 +112,9 @@ return System.currentTimeMillis() % 2 == 0 ? SUCCESS : ERROR;
 </dependency>
 {%endcodeblock%}
 
-**2. Action**
+### 3.2 Action
 
-{%codeblock java%}
+{%codeblock LoginAction.java lang:java%}
 package cn.corpro.iot.server.action;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -124,7 +135,7 @@ public class LoginAction extends ActionSupport {
 {%endcodeblock%}
 
 
-{%codeblock java%}
+{%codeblock WelcomeAction.java lang:java%}
 package cn.corpro.iot.server.action;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -162,22 +173,17 @@ return super.execute();
 }
 {%endcodeblock%}
 
-**3. 不需要xml配置**
+### 3.3 不需要xml配置**
 
-**4. 运行服务器，打开/users/login看效果**
+### 3.4 运行服务器，打开/users/login看效果**
 
-**注意**
+
+## 注意
 
 1. 添加依赖后，不要忘了将jar加入IDEA的Output layout，否则注解不生效
 
-2. 如果不用根命名空间，jsp文件也要放入相应的命名空间，如`/users/login.jsp`
+2. 如果不用根命名空间，jsp文件要放入相应的命名空间，如`/users/login.jsp`
 
 3. 如果不设置`@ResultPath(value = "/")`，struts2将会去`/WEB-INF/content/`目录下寻找视图文件，一般jsp文件不放这位置。可在struts.xml中设置默认值`<constant name="struts.convention.result.path" value="/"/>`
 
 4. 如果只用注解的话，struts2和spring都可以完全抛弃xml配置文件
-
-{%codeblock java%}
-{%endcodeblock%}
-
-{%codeblock java%}
-{%endcodeblock%}

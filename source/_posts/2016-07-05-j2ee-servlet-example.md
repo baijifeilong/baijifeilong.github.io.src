@@ -2,12 +2,22 @@
 layout: post
 title:  "J2EE Servlet 示例"
 date:   2016-07-05 15:26:26 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - J2EE
+    - Servlet
 ---
 
-**HelloWorldServlet**
+Java Servlet 之 Hello World
 
-{%codeblock java%}
+<!-- more -->
+
+## 1. HelloWorldServlet.java
+
+{%codeblock HelloWorldServlet.java lang:java%}
 package cn.corpro.iot.server.servlet;
 
 import javax.servlet.ServletException;
@@ -28,9 +38,9 @@ resp.getWriter().write("Hello Servlet");
 }
 {%endcodeblock%}
 
-**web.xml**
+## 2. web.xml
 
-{%codeblock xml%}
+{%codeblock web.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -49,4 +59,4 @@ version="3.1">
 </web-app>
 {%endcodeblock%}
 
-**然后启动web服务器到/hello下查看效果**
+## 3. 启动web服务器，访问/hello下查看效果

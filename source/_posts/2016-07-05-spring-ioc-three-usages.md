@@ -1,15 +1,21 @@
 ---
 layout: post
-title:  "Sprint IOC的三种用法 "
+title:  "使用Spring进行依赖注入的三种用法 "
 date:   2016-07-05 14:08:29 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
 ---
 
-**1. XML配置**
+使用 Spring 框架进行依赖注入，可以通过XML配置文件，也可以通过Java注解。
+
+<!-- more -->
+
+## 1. 使用XML配置文件
 
 XML的文件名任意，一般是applicationContext.xml或spring-config.xml
 
-{%codeblock java%}
+{%codeblock HelloWorld.java lang:java%}
 package cn.corpro.iot.server.model;
 
 /**
@@ -30,7 +36,7 @@ System.out.printf("Spring 4: Hello %s!\n", name);
 }
 {%endcodeblock%}
 
-{%codeblock xml%}
+{%codeblock applicationContext.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -46,9 +52,9 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 </beans>
 {%endcodeblock%}
 
-**2. JavaConfig**
+## 2. @Bean 注解
 
-{%codeblock java%}
+{%codeblock HelloWorld.java lang:java%}
 package cn.corpro.iot.server.model;
 
 /**
@@ -69,7 +75,7 @@ System.out.printf("Spring 4: Hello %s!\n", name);
 }
 {%endcodeblock%}
 
-{%codeblock java%}
+{%codeblock Spring.java lang:java%}
 package cn.corpro.iot.server.config;
 
 import cn.corpro.iot.server.model.HelloWorld;
@@ -90,13 +96,13 @@ return new HelloWorld();
 }
 {%endcodeblock%}
 
-**3. 注解**
+## 3. @Component 注解
 
-@Component @Service @Repository @Controller是同一种东西，后三种表意性更强
+@Component @Service @Repository @Controller是同一种东西，只是后三种表意性更强，更具体，也更常用。
 
-使用注解需要在配置里添加 `context:component-scan`
+使用组建扫描需要在配置里添加 `context:component-scan`
 
-{%codeblock java%}
+{%codeblock AnnotationTest.java lang:java%}
 package cn.corpro.iot.server.model;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -118,7 +124,7 @@ System.out.println("Hello, I'm annotation test: " + name);
 }
 {%endcodeblock%}
 
-{%codeblock xml%}
+{%codeblock spring.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -135,9 +141,9 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 </beans>
 {%endcodeblock%}
 
-**用法**
+## 以上三种方法的使用测试：
 
-{%codeblock java%}
+{%codeblock Main.java lang:java%}
 package cn.corpro.iot.server.main;
 
 import cn.corpro.iot.server.config.Spring;
