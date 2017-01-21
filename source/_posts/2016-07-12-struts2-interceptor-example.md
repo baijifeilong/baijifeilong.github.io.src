@@ -2,12 +2,19 @@
 layout: post
 title:  "Struts2 拦截器示例"
 date:   2016-07-12 14:29:40 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Struts
 ---
 
 ## 1. 拦截器定义
 
-{%codeblock java%}
+<!-- more -->
+
+{%codeblock AppInterceptor.java lang:java%}
 package cn.corpro.iot;
 
 import cn.corpro.iot.util.Flash;
@@ -50,7 +57,7 @@ return invocation.invoke();
 
 ## 2. Struts 配置
 
-{%codeblock xml%}
+{%codeblock struts.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"

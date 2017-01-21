@@ -1,13 +1,19 @@
 ---
 layout: post
-title:  "IDEA 设置Java版本"
+title:  "IDEA 设置 Java 版本"
 date:   2016-07-06 23:17:22 +0800
-categories: it ide
+categories:
+    - Tools
+tags:
+    - IDE
+    - Java
 ---
 
-## 1. 设置模快语言级别
+## 1. 设置模块语言级别
 
 `File->Project Structure->Project Settings->Modules->Language Level`
+
+<!-- more -->
 
 ## 2. 设置编译语言级别
 

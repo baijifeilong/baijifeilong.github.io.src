@@ -1,13 +1,20 @@
 ---
 layout: post
-title:  "Sublime Text"
+title:  "Sublime Text 大杂烩"
 date:   2016-12-22 22:02:18 +0800
-categories: editor
+categories:
+    - Tools
+    - Sublime Text
+tags:
+    - Editor
+    - Sublime Text
 ---
 
 ## 主题
 
 推荐主题： Monokai Extended
+
+<!-- more -->
 
 ## 插件
 
@@ -17,7 +24,7 @@ categories: editor
 
 例子：
 
-~~~ xml
+{%codeblock snippets.xml lang:xml%}
 <snippet>
 <content><![CDATA[
 ---
@@ -30,4 +37,4 @@ categories: ${3}
 <tabTrigger>jk</tabTrigger>
 <scope>text.html.markdown</scope>
 </snippet>
-~~~
+{%endcodeblock%}

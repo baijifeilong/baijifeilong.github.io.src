@@ -1,13 +1,21 @@
 ---
 layout: post
-title:  "Spring4 集成 Hibernate5"
+title:  "在Spring4 中集成 Hibernate5"
 date:   2016-07-08 16:09:43 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Spring
+    - Hibernate
 ---
 
 ## 1. Spring配置
 
-{%codeblock xml%}
+<!-- more -->
+
+{%codeblock applicationContext.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -85,9 +93,7 @@ expression="execution(public * cn.corpro.iot.service.*.*(..))"/>
 
 数据源在Spring中设置了，所以Hibernate只需要设置关系对象映射就行。
 
-hibernate-mapping/person.xml:
-
-{%codeblock xml%}
+{%codeblock hibernate-mapping/person.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
@@ -104,7 +110,7 @@ hibernate-mapping/person.xml:
 
 ## 3. 使用
 
-{%codeblock java%}
+{%codeblock UserService.java lang:java%}
 package cn.corpro.iot.service;
 
 import cn.corpro.iot.model.Person;

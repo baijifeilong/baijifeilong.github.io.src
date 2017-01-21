@@ -1,13 +1,20 @@
 ---
 layout: post
-title:  "Struts2 动态URL示例"
+title:  "Struts2 动态URL使用示例"
 date:   2016-07-12 14:50:22 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Struts
 ---
 
 ## Struts配置
 
-{%codeblock xml%}
+<!-- more -->
+
+{%codeblock struts.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
@@ -62,5 +69,7 @@ categories: it java
 </package>
 </struts>
 {%endcodeblock%}
+
+## 访问
 
 访问`/test/aaa`将会调用对应action的方法`setUsername("aaa")`

@@ -5,7 +5,7 @@ date:   2016-07-05 15:31:36 +0800
 categories:
     - Tools
 tags:
-    - IDEA
+    - IDE
     - Java
 ---
 

@@ -5,6 +5,9 @@ date:   2016-07-05 14:08:29 +0800
 categories:
     - Programming
     - Java
+tags:
+    - Java
+    - Spring
 ---
 
 使用 Spring 框架进行依赖注入，可以通过XML配置文件，也可以通过Java注解。

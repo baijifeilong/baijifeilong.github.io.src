@@ -1,9 +1,19 @@
 ---
 layout: post
-title:  "Hibernate5 示例"
+title:  "Hibernate5 的配置与使用"
 date:   2016-07-06 13:51:47 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Hibernate
+    - Database
 ---
+
+Hibernate的配置与使用参考。
+
+<!-- more -->
 
 ## 1. hibernate配置
 

@@ -1,15 +1,23 @@
 ---
 layout: post
-title:  "Freemarker示例"
+title:  "Freemarker 简明用法"
 date:   2016-07-07 15:30:31 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Freemarker
+    - Template Engine
 ---
+
+简要记录Freemarker的基本用法，以备参考。
+
+<!-- more -->
 
 ## 1. 创建模板
 
-`templates.ftl`:
-
-{%codeblock xml%}
+{%codeblock templates.ftl lang:xml%}
 <#macro main title>
 <!doctype html>
 <html lang="zh-CN">
@@ -35,9 +43,7 @@ Hello, I'm greet template
 
 ## 2. 使用模板
 
-`main.ftl`
-
-{%codeblock xml%}
+{%codeblock main.ftl lang:xml%}
 <#import "templates.ftl" as templates>
 
 <@templates.main title="Index page">
@@ -47,7 +53,7 @@ Hello, I'm greet template
 
 ## 3.通过Struts调用
 
-{%codeblock xml%}
+{%codeblock struts.xml lang:xml%}
 <package name="root" namespace="/" extends="struts-default">
 <action name="">
 <result type="freemarker">home.ftl</result>

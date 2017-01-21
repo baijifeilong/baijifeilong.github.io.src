@@ -1,13 +1,19 @@
 ---
 layout: post
-title:  "Struts2 集成 Spring4"
+title:  "在Struts2 中集成 Spring4"
 date:   2016-07-08 14:10:43 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Struts
+    - Spring
 ---
 
 ## 1. 安装struts2-spring-plugin依赖
 
-{%codeblock xml%}
+{%codeblock pom.xml lang:xml%}
 <dependency>
 <groupId>org.apache.struts</groupId>
 <artifactId>struts2-spring-plugin</artifactId>
@@ -15,9 +21,11 @@ categories: it java
 </dependency>
 {%endcodeblock%}
 
+<!-- more -->
+
 ## 2. 在web.xml中配置Spring监听器
 
-{%codeblock xml%}
+{%codeblock web.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -51,7 +59,7 @@ version="3.1">
 
 Spring配置
 
-{%codeblock xml%}
+{%codeblock applicationContext.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -75,7 +83,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
 Struts配置
 
-{%codeblock xml%}
+{%codeblock struts.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"

@@ -2,12 +2,19 @@
 layout: post
 title:  "Sublime Text Markdown 语法高亮"
 date:   2016-07-06 21:57:17 +0800
-categories: it ide
+categories:
+    - Tools
+    - Sublime Text
+tags:
+    - Editor
+    - Sublime Text
 ---
 
 ## 1. 安装主题Monokai Extended
 
-Sublime Text默认对Markdown的语法高亮不完整，所以可以换个主题[`Monokai Extended`](https://github.com/jonschlinkert/sublime-markdown-extended)
+Sublime Text默认对Markdown的语法高亮不完整，所以可以换个主题[Monokai Extended](https://github.com/jonschlinkert/sublime-markdown-extended)
+
+<!-- more -->
 
 安装后需要手动切换主题
 

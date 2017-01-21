@@ -1,21 +1,28 @@
 ---
 layout: post
-title:  "Maven示例"
+title:  "使用Maven创建工程并导出为IDE项目"
 date:   2016-07-06 21:41:16 +0800
-categories: it java
+categories:
+    - Tools
+    - Maven
+tags:
+    - Maven
+    - Java
 ---
 
-## 创建Java工程
+## 1. 创建Java工程
 
-{%codeblock shell%}
+{%codeblock lang:shell%}
 mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=bj -DartifactId=JavaDemo -DinteractiveMode=false
 {%endcodeblock%}
+
+<!-- more -->
 
 也可以使用`mvn archetype:generate`开启交互模式，一路回车，除了groupId和artifactId。因为默认的原型就是maven-archetype-quickstart
 
 ## 创建Web工程
 
-{%codeblock shell%}
+{%codeblock lang:shell%}
 mvn archetype:generate -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=bj -DartifactId=WebDemo -DinteractiveMode=false
 {%endcodeblock%}
 

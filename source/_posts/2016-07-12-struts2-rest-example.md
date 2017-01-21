@@ -1,13 +1,21 @@
 ---
 layout: post
-title:  "Struts2 REST 插件示例"
+title:  "Struts2 REST 插件使用示例"
 date:   2016-07-12 14:28:24 +0800
-categories: it java
+categories:
+    - Programming
+    - Java
+tags:
+    - Java
+    - Struts
+    - REST
 ---
 
 ## 1. struts 配置
 
-{%codeblock xml%}
+<!-- more -->
+
+{%codeblock struts.xml lang:xml%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
@@ -48,7 +56,7 @@ categories: it java
 
 ## 2. Controller 示例
 
-{%codeblock java%}
+{%codeblock PlantAction.java lang:java%}
 package cn.corpro.iot.controller;
 
 import cn.corpro.iot.model.Plant;
