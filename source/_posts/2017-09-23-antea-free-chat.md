@@ -3,9 +3,9 @@ title:  放开那个群主，让我来——安提自由聊(Antea Free Chat)
 date: 2017-09-23 11:51:55
 tags:
     - Android
-    - Software
+    - Application
 categories:
-    - Software
+    - Application
     - Android
 ---
 
