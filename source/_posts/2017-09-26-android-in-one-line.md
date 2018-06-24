@@ -36,5 +36,7 @@ recyclerView.setAdapter(new RecyclerView.Adapter() {
 });
 {%endcodeblock%}
 
+<!--more-->
+
 <img src="/images/20170926-android-in-on-line-1.png" alt="RecyclerView" width="500px" />
 

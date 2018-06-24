@@ -23,6 +23,8 @@ Antea也可以用在其他软件中，请自行探索。
 
 Antea开放[源代码](https://github.com/baijifeilong/antea)，纯单机不联网，不申请任何权限，请放心使用。
 
+<!--more-->
+
 使用截图如下：
 
 <img src="/images/20180306-antea-1.png" width="500px" alt="输入正文和加密触发字符"/>
