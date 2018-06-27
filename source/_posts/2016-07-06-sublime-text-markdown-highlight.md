@@ -3,8 +3,7 @@ layout: post
 title:  "Sublime Text Markdown 语法高亮"
 date:   2016-07-06 21:57:17 +0800
 categories:
-    - Tools
-    - Sublime Text
+    - Applications
 tags:
     - Editor
     - Sublime Text

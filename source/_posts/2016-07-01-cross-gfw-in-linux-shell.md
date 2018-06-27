@@ -3,6 +3,7 @@ layout: post
 title:  "Linux shell 下 VPN 的安装与使用"
 date:   2016-07-01 11:54:36 +0800
 categories:
+    - OS
     - Linux
 tags:
     - Linux

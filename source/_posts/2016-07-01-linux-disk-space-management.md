@@ -2,7 +2,9 @@
 layout: post
 title:  "Linux 下进行磁盘空间管理的几条实用命令"
 date:   2016-07-01 17:17:17 +0800
-categories: Linux
+categories: 
+    - OS
+    - Linux
 tags:
     - Linux
     - Shell

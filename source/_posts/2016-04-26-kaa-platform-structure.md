@@ -3,10 +3,13 @@ layout: post
 title:  "物联网平台 Kaa 的技术架构（翻译）"
 date:   2016-04-26 15:31:12 +0800
 categories:
+    - Programming
     - IoT
 tags:
     - IoT
     - Kaa
+    - Translation
+    - Document
 ---
 
 Kaa物联网平台的核心功能包括设备连接、集成与数据处理。本文将带您浏览Kaa的方方面面，让您对Kaa的功能与性能有更深刻的理解。

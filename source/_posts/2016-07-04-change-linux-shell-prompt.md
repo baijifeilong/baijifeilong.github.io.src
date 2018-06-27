@@ -3,6 +3,7 @@ layout: post
 title:  "修改 Linux 命令行提示符"
 date:   2016-07-04 09:47:17 +0800
 categories:
+    - OS
     - Linux
 tags:
     - Linux

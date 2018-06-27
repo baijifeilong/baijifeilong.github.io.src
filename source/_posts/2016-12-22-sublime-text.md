@@ -3,8 +3,7 @@ layout: post
 title:  "Sublime Text 大杂烩"
 date:   2016-12-22 22:02:18 +0800
 categories:
-    - Tools
-    - Sublime Text
+    - Applications
 tags:
     - Editor
     - Sublime Text

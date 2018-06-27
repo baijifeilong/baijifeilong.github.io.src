@@ -3,10 +3,13 @@ layout: post
 title:  "开源物联网平台 Kaa 简介（翻译）"
 date:   2016-04-21 09:37:35 +0800
 categories:
+    - Programming
     - IoT
 tags:
     - IoT
     - Kaa
+    - Translation
+    - Document
 ---
 
 Kaa是一个面向生产的、多用途的中间件平台，他被用来构建完整的端到端的IoT解决方案，包括应用程序与智能设备。Kaa平台为IoT产品开发提供了一个开放的、功能丰富的工具箱，显著减少了相关的花费、风险与上市时间。为快速上手，Kaa提供了一系列开箱即用的企业级IoT特性，可以被方便地插入使用，以实现绝大多数的IoT用例。
