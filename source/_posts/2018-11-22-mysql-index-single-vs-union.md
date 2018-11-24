@@ -49,6 +49,31 @@ CALL tmpproc();
 
 <!--more-->
 
+字符串做索引的情况:
+
+```sql
+USE foo;
+DROP TABLE IF EXISTS tmp;
+CREATE TABLE tmp (
+  id         INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  school_id  CHAR(4) NOT NULL,
+  student_id CHAR(6) NOT NULL,
+  INDEX school_id(school_id),
+  INDEX student_id(student_id),
+  INDEX school_id_and_student_id(school_id, student_id)
+);
+DROP PROCEDURE IF EXISTS tmpproc;
+CREATE PROCEDURE tmpproc() BEGIN
+  DECLARE i INT UNSIGNED DEFAULT 0;
+  WHILE i < 10000000 DO
+    INSERT INTO tmp (school_id, student_id)
+    VALUES (SUBSTR(MD5(RAND()) FROM 1 FOR 4), SUBSTR(MD5(RAND()) FROM 1 FOR 6));
+    SET i = i + 1;
+  END WHILE;
+END;
+CALL tmpproc();
+```
+
 ## 3. 查询速度比较
 
 ### 走联合索引
@@ -76,7 +101,7 @@ WHERE student_id = 7777777;
 
 ## 4. 结论
 
-在查询速度上没什么区别。至少在1000万的数据量上很难体现出来。
+在查询速度上没什么区别。至少在1000万的数据量上很难体现出来。字符串做索引也差不多。
 
 ## SQL日志
 
