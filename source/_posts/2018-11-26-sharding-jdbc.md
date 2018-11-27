@@ -21,8 +21,6 @@ ShardingJDBC是一个数据库分库分表框架，它通过实现自定义的`j
 
 以SpringBoot+Maven+MySQL为例
 
-<!--more-->
-
 ### 1. 引入ShardingJDBC依赖
 
 ```xml
@@ -66,6 +64,8 @@ ShardingJDBC是一个数据库分库分表框架，它通过实现自定义的`j
     </dependencies>
 </project>
 ```
+
+<!--more-->
 
 ### 2. 创建数据表
 
@@ -222,3 +222,9 @@ MySQL的SQL日志如下:
 ```
 
 可见，ShardingJDBC确实执行了多库多表的插入与查询操作，而且生成了分布式自增ID
+
+### 5. ShardingJDBC的局限性
+
+ShardingJDBC似乎只支持带有分表键而且查询条件必须是`=`或`IN`的查询。导致像`SELECT MAX(id) FROM user`(查询用户表中的最大ID)这种看似极其简单的查询(每表做一次MAX，中间件做一次归并)也无法进行。
+
+文章首发: [https://baijifeilong.github.io/2018/11/26/sharding-jdbc](https://baijifeilong.github.io/2018/11/26/sharding-jdbc)
