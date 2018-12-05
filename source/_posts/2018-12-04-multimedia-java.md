@@ -9,7 +9,7 @@ date: 2018-12-04 20:56:48
 
 # Java处理多媒体文件
 
-## HumbleVideo
+## 1. HumbleVideo
 
 [HumbleVideo](https://github.com/artclarke/humble-video)是Java界比较活跃的多媒体处理库
 
@@ -83,7 +83,7 @@ java.lang.AssertionError
 
 <!--more-->
 
-## ffmpeg-cli-wrapper
+## 2. ffmpeg-cli-wrapper
 
 [ffmpeg-cli-wrapper](https://github.com/bramp/ffmpeg-cli-wrapper)是对系统`ffmpeg`命令的封装，可以调用系统安装的`ffmpeg`处理多媒体文件
 
