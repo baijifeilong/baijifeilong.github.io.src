@@ -23,6 +23,8 @@ date: 2018-12-04 20:56:48
 </dependency>
 ```
 
+<!--more-->
+
 ### Java代码示例
 
 ```java
@@ -80,8 +82,6 @@ java.lang.AssertionError
 ```
 
 作为Java最活跃的多媒体库，读取文件信息和文件内容都报不明所以的异常，所以用Java处理多媒体不太容易
-
-<!--more-->
 
 ## 2. ffmpeg-cli-wrapper
 
