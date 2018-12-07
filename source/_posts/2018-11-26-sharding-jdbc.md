@@ -525,7 +525,7 @@ ShardingJDBC的分库策略和分表策略都得实现同一个接口`io.shardin
 
 1. `io.shardingsphere.api.config.strategy.NoneShardingStrategyConfiguration` 不切片
 2. `io.shardingsphere.api.config.strategy.InlineShardingStrategyConfiguration` Groovy表达式切片
-3. `io.shardingsphere.api.config.strategy.HintShardingStrategyConfiguration` 按提示切片，所谓的提示指的是分片条件不在标准SQL中，是按ShardingJDBC的特殊语法注入进去的
+3. `io.shardingsphere.api.config.strategy.HintShardingStrategyConfiguration` 按提示切片，所谓的提示指的是分片条件不在标准SQL中，是按ShardingJDBC的特殊要求注入进去的。提示条件保存在ThreadLocal中，通过`HintManager.getInstance()`获取HintManager单例设置切片值
 4. `io.shardingsphere.api.config.strategy.StandardShardingStrategyConfiguration` 标准切片策略，需要指定: 1. 切片键; 2. 切片值到真实源/表的映射
 5. `io.shardingsphere.api.config.strategy.ComplexShardingStrategyConfiguration` 复杂切片策略，适用于有多个切片键的情况。需要指定: 1. 切片键集合; 2. 切片键集合到真实源/表集合的映射
 
@@ -859,5 +859,10 @@ Users(id<=3): [{id=1, username=User1}, {id=2, username=User2}, {id=3, username=U
 [2018-12-06 16:30:33,532] [INFO] [Sharding-Sphere-SQL SQLLogger.java:71] [main] Actual SQL: ds0 ::: SELECT * FROM user0 WHERE id IN (1,3,5)
 Users(id IN (1,3,5)): [{id=1, username=User1}, {id=3, username=User3}, {id=5, username=User5}]
 ```
+
+### ShardingJDBC整合到现有项目
+
+1. 在创建ShardingJDBC的数据源时(`ShardingDataSourceFactory.createDataSource(...)`)添加一个不使用切片的数据源
+2. 将不切片的数据源设为ShardingJDBC的默认数据源 `shardingRuleConfiguration.setDefaultDataSourceName("foo")`
 
 文章首发: [https://baijifeilong.github.io/2018/11/26/sharding-jdbc](https://baijifeilong.github.io/2018/11/26/sharding-jdbc)
