@@ -538,7 +538,7 @@ ShardingJDBC的分库策略和分表策略都得实现同一个接口`io.shardin
 
 #### 自定义切片策略举例
 
-1. 普通取模切片
+##### 1. 普通取模切片
 
 ```java
 TableRuleConfiguration tableRuleConfiguration = new TableRuleConfiguration();
@@ -550,7 +550,7 @@ tableRuleConfiguration.setTableShardingStrategyConfig(new StandardShardingStrate
         (availableTargetNames, shardingValue) -> "user" + ((Number) shardingValue.getValue()).intValue() % 3));
 ```
 
-2. 一致性哈希切片
+##### 2. 一致性哈希切片
 ```java
 package bj;
 
@@ -862,7 +862,15 @@ Users(id IN (1,3,5)): [{id=1, username=User1}, {id=3, username=User3}, {id=5, us
 
 ### ShardingJDBC整合到现有项目
 
+一般情况直接替换数据源即可。也可以用多个数据源。
+
 1. 在创建ShardingJDBC的数据源时(`ShardingDataSourceFactory.createDataSource(...)`)添加一个不使用切片的数据源
 2. 将不切片的数据源设为ShardingJDBC的默认数据源 `shardingRuleConfiguration.setDefaultDataSourceName("foo")`
+
+### ShardingJDBC设置绑定表
+
+在ShardingJDBC中，如果对分片表使用Join，会对同一数据源内的所有实表相互Join，Join路径为两逻辑表对应实表数量的笛卡尔积
+
+如果两表为父子表，而且使用了相同的分片策略，可以将两表设为绑定关系，这样在Join的时候，就可以一对一Join
 
 文章首发: [https://baijifeilong.github.io/2018/11/26/sharding-jdbc](https://baijifeilong.github.io/2018/11/26/sharding-jdbc)
