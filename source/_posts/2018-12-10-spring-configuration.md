@@ -265,4 +265,25 @@ public class App implements ApplicationListener<ApplicationReadyEvent> {
 App.Settings(name=HelloWorld, version=1, author=App.Settings.Author(name=Unname, age=88))
 ```
 
+### 多级配置的简化写法
+
+多级配置，里层可以不用注解，Spring已经做过了处理，因此可以直接写成以下这种形式:
+
+```java
+@ConfigurationProperties(prefix = "app")
+@Component
+@Data
+public static class Settings {
+    private String name;
+    private int version;
+    private Author author;
+
+    @Data
+    static class Author {
+        private String name;
+        private String age;
+    }
+}
+```
+
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)
