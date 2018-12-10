@@ -29,7 +29,7 @@ def run_shadowsocks(host, port, password, method):
 
 def run_from_page():
     print("Downloading servers")
-    url = 'https://raw.githubusercontent.com/baijifeilong/resources/master/mastercrosswall/servers'
+    url = 'https://freeshadowsocks.org/servers'
     print("Servers downloaded")
     text = requests.get(url).text
     lines = [line for line in text.splitlines() if re.match('(\d+/){3}\d+', line)][:18]
