@@ -1,5 +1,5 @@
 ---
-title: java-bean-utils
+title: Java对象工具类
 categories:
   - Programming
 tags:
@@ -7,15 +7,18 @@ tags:
 date: 2018-12-12 17:34:43
 ---
 
-# Title
+# Java对象工具类
+
+在Java开发中，处理对象的时候，经常会发现一些自己感觉很基础的功能，JDK不提供，第三方也找不到，只能自己开发。
 
 <!--more-->
 
-## Java代码
+## 对象转字典
+
+### Java代码
 
 ```java
-package bj;
-
+package bj; 
 import io.vavr.control.Try;
 
 import java.awt.*;
@@ -52,7 +55,7 @@ public class MyBeanUtils {
 }
 ```
 
-## 控制台输出
+### 控制台输出
 
 ```log
 {falpha=0.0, cs=null, fvalue=null, frgbvalue=null, value=-15298460}
