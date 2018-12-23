@@ -18,4 +18,8 @@ tags:
 
 <!-- more -->
 
+## 2. Jetbrains使用FiraCode字体
+
+FiraCode字体支持连字。在换用FiraCode字体后，还需要在字体选项中启用连字(Enable font igatures)
+
 ![Jetbrains IDEA use attention](/images/jetbrains-idea-use-attention.jpg)

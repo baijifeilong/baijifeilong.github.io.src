@@ -14,6 +14,10 @@ date: 2018-10-04 00:52:13
 
 IDEA天然支持HotSwap，如果用JRebel需要安装相应的插件`JRebel for IntelliJ`
 
+## JRebel破解
+
+服务器填写`http://139.199.89.239:1008/67ea78bb-3eb0-49b7-9ab6-5a76aa26bd08` 帐号随便填写即可
+
 IDEA中的`Reload`操作即为热部署。如果是普通方式启动项目，热部署方案使用`HotSwap`。如果项目用JRebel启动，热部署方案就使用`JRebel`
 
 IDEA热部署的几种操作方式:
