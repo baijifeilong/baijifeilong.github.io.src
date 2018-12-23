@@ -18,6 +18,8 @@ TkMyBatis是一个MyBatis的通用Mapper工具
 
 ## 2. 引入TkMyBatis到SpringBoot项目
 
+[最新版本](https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter)
+
 以Gradle为例
 ```gradle
 compile 'tk.mybatis:mapper-spring-boot-starter:2.0.3'
