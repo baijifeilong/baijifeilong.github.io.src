@@ -20,10 +20,24 @@ TkMyBatis是一个MyBatis的通用Mapper工具
 
 [最新版本](https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter)
 
-以Gradle为例
-```gradle
-compile 'tk.mybatis:mapper-spring-boot-starter:2.0.3'
+以Maven为例
+```xml
+<dependency>
+    <groupId>tk.mybatis</groupId>
+    <artifactId>mapper-spring-boot-starter</artifactId>
+    <version>2.1.2</version>
+</dependency>
+
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.2</version>
+</dependency>
 ```
+
+注意:
+
+- lombok最好用1.18.2版本，太老的话不支持`@FieldNameConstants`注解，太新的话IDEA插件不支持
 
 ## 3. 基本用法
 
@@ -36,11 +50,15 @@ compile 'tk.mybatis:mapper-spring-boot-starter:2.0.3'
 <!--more-->
 
 ```java
-package com.ddweilai.microservice;
+`package bj.tkmybatis;
 
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Data;
+import lombok.experimental.FieldNameConstants;
 import org.apache.ibatis.annotations.Select;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -48,18 +66,20 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
-import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.spring.annotation.MapperScan;
+import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.sql.DataSource;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/**
+ * Created by BaiJiFeiLong@gmail.com at 2018/12/25 上午9:55
+ */
 @SpringBootApplication
-@MapperScan(basePackageClasses = App.class)
+@tk.mybatis.spring.annotation.MapperScan(basePackageClasses = App.class)
 public class App implements ApplicationListener<ApplicationReadyEvent> {
     public static void main(String[] args) {
         new SpringApplicationBuilder(App.class).web(WebApplicationType.NONE).run(args);
@@ -72,32 +92,52 @@ public class App implements ApplicationListener<ApplicationReadyEvent> {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public void onApplicationEvent(ApplicationReadyEvent event) {
+    public void onApplicationEvent(@NotNull ApplicationReadyEvent event) {
+        ((Logger) LoggerFactory.getLogger(App.class.getPackage().getName())).setLevel(Level.DEBUG);
+
         jdbcTemplate.execute("DROP TABLE IF EXISTS user");
-        jdbcTemplate.execute("CREATE TABLE user(id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(16), real_name VARCHAR(16)) CHARSET utf8");
+        jdbcTemplate.execute("CREATE TABLE user(id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(16) DEFAULT 'DeFaUlT', real_name VARCHAR(16)) DEFAULT CHARSET utf8");
 
         User alpha = new User() {{
             setUsername("alpha");
             setRealName("阿尔法");
         }};
-        userMapper.insert(alpha);
+        userMapper.insertSelective(alpha);
 
         User beta = new User() {{
             setUsername("beta");
             setRealName("贝塔");
         }};
-        userMapper.insert(beta);
+        userMapper.insertSelective(beta);
+
+        User gamma = new User() {{
+            setUsername("gamma");
+        }};
+        userMapper.insertSelective(gamma);
+
+        User theta = new User();
+        userMapper.insertSelective(theta);
 
         System.out.println("Inserted alpha:");
         System.out.println(alpha);
         System.out.println("Inserted beta:");
         System.out.println(beta);
+        System.out.println("Inserted gamma:");
+        System.out.println(gamma);
+        System.out.println("Inserted theta:");
+        System.out.println(theta);
         System.out.println("Select by primary key");
         System.out.println(userMapper.selectByPrimaryKey(1));
         System.out.println("selectAll:");
         System.out.println(userMapper.selectAll());
         System.out.println("mySelectAll:");
         System.out.println(userMapper.myFindAll());
+
+        System.out.println("Real name is null:");
+        List<User> id = userMapper.selectByExample(new Example(User.class) {{
+            createCriteria().andIsNull(User.FIELD_REAL_NAME);
+        }});
+        System.out.println(id);
     }
 
     @Bean
@@ -108,13 +148,18 @@ public class App implements ApplicationListener<ApplicationReadyEvent> {
             setPassword("root");
         }};
     }
+
+    @FieldNameConstants
+    class X {
+        private int aaa;
+    }
 }
 
 @Data
+@FieldNameConstants
 class User {
 
     @Id
-    @Column
     @GeneratedValue(generator = "JDBC")
     private Integer id;
 
@@ -123,11 +168,11 @@ class User {
     private String realName;
 }
 
-interface UserMapper extends Mapper<User> {
+interface UserMapper extends tk.mybatis.mapper.common.Mapper<User> {
     @Select("SELECT * FROM user")
     List<User> myFindAll();
 }
-```
+``
 
 ### 示例输出
 
@@ -138,42 +183,63 @@ interface UserMapper extends Mapper<User> {
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.0.1.RELEASE)
+ :: Spring Boot ::        (v2.1.0.RELEASE)
 
-2018-12-24 20:51:57.025  INFO 35138 --- [           main] com.ddweilai.microservice.App            : Starting App on MacBook-Air-2.local with PID 35138 (/Users/yuchao/workspace/java/1d1d/chat-system/target/classes started by yuchao in /Users/yuchao/workspace/java/1d1d/chat-system)
-2018-12-24 20:51:57.040  INFO 35138 --- [           main] com.ddweilai.microservice.App            : The following profiles are active: local
-2018-12-24 20:51:57.189  INFO 35138 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4135c3b: startup date [Mon Dec 24 20:51:57 CST 2018]; root of context hierarchy
-2018-12-24 20:51:58.534  WARN 35138 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userMapper' and 'com.ddweilai.microservice.UserMapper' mapperInterface. Bean already defined with the same name!
-2018-12-24 20:51:58.535  WARN 35138 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.ddweilai.microservice]' package. Please check your configuration.
-2018-12-24 20:51:59.897  INFO 35138 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
-2018-12-24 20:51:59.897  INFO 35138 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
-2018-12-24 20:51:59.898  INFO 35138 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
-2018-12-24 20:51:59.898  INFO 35138 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
-2018-12-24 20:52:00.414  INFO 35138 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2018-12-24 20:52:00.416  INFO 35138 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
-2018-12-24 20:52:00.416  INFO 35138 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
-2018-12-24 20:52:00.424  INFO 35138 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.ddweilai.microservice:name=dataSource,type=App.3]
-2018-12-24 20:52:00.425  INFO 35138 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
-2018-12-24 20:52:00.451  INFO 35138 --- [           main] com.ddweilai.microservice.App            : Started App in 4.783 seconds (JVM running for 6.841)
-2018-12-24 20:52:00.473  INFO 35138 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-12-24 20:52:01.259  INFO 35138 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-12-25 10:11:54.745  INFO 37343 --- [           main] bj.tkmybatis.App                         : Starting App on MacBook-Air-2.local with PID 37343 (/Users/yuchao/temp/java/hellomaven/target/classes started by yuchao in /Users/yuchao/temp/java/hellomaven)
+2018-12-25 10:11:54.792  INFO 37343 --- [           main] bj.tkmybatis.App                         : No active profile set, falling back to default profiles: default
+2018-12-25 10:11:56.829  WARN 37343 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[bj.tkmybatis]' package. Please check your configuration.
+2018-12-25 10:11:56.918  INFO 37343 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-25 10:11:56.924  INFO 37343 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-25 10:11:57.065  INFO 37343 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90ms. Found 0 repository interfaces.
+2018-12-25 10:11:58.997  INFO 37343 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2018-12-25 10:11:58.999  INFO 37343 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2018-12-25 10:11:59.000  INFO 37343 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2018-12-25 10:11:59.004  INFO 37343 --- [           main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2018-12-25 10:11:59.912  INFO 37343 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-12-25 10:12:00.060  INFO 37343 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-12-25 10:12:00.627  INFO 37343 --- [           main] bj.tkmybatis.App                         : Started App in 7.205 seconds (JVM running for 9.92)
+2018-12-25 10:12:00.775 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==>  Preparing: INSERT INTO user ( id,username,real_name ) VALUES( ?,?,? ) 
+2018-12-25 10:12:00.795 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==> Parameters: null, alpha(String), 阿尔法(String)
+2018-12-25 10:12:00.801 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : <==    Updates: 1
+2018-12-25 10:12:00.819 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==>  Preparing: INSERT INTO user ( id,username,real_name ) VALUES( ?,?,? ) 
+2018-12-25 10:12:00.819 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==> Parameters: null, beta(String), 贝塔(String)
+2018-12-25 10:12:00.822 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : <==    Updates: 1
+2018-12-25 10:12:00.823 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==>  Preparing: INSERT INTO user ( id,username ) VALUES( ?,? ) 
+2018-12-25 10:12:00.824 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==> Parameters: null, gamma(String)
+2018-12-25 10:12:00.827 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : <==    Updates: 1
+2018-12-25 10:12:00.837 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==>  Preparing: INSERT INTO user ( id ) VALUES( ? ) 
+2018-12-25 10:12:00.838 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : ==> Parameters: null
+2018-12-25 10:12:00.840 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.insertSelective  : <==    Updates: 1
 Inserted alpha:
 User(id=1, username=alpha, realName=阿尔法)
 Inserted beta:
 User(id=2, username=beta, realName=贝塔)
+Inserted gamma:
+User(id=3, username=gamma, realName=null)
+Inserted theta:
+User(id=4, username=null, realName=null)
 Select by primary key
+2018-12-25 10:12:00.851 DEBUG 37343 --- [           main] b.t.UserMapper.selectByPrimaryKey        : ==>  Preparing: SELECT id,username,real_name FROM user WHERE id = ? 
+2018-12-25 10:12:00.852 DEBUG 37343 --- [           main] b.t.UserMapper.selectByPrimaryKey        : ==> Parameters: 1(Integer)
+2018-12-25 10:12:00.865 DEBUG 37343 --- [           main] b.t.UserMapper.selectByPrimaryKey        : <==      Total: 1
 User(id=1, username=alpha, realName=阿尔法)
 selectAll:
-[User(id=1, username=alpha, realName=阿尔法), User(id=2, username=beta, realName=贝塔)]
+2018-12-25 10:12:00.866 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectAll        : ==>  Preparing: SELECT id,username,real_name FROM user 
+2018-12-25 10:12:00.866 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectAll        : ==> Parameters: 
+2018-12-25 10:12:00.868 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectAll        : <==      Total: 4
+[User(id=1, username=alpha, realName=阿尔法), User(id=2, username=beta, realName=贝塔), User(id=3, username=gamma, realName=null), User(id=4, username=DeFaUlT, realName=null)]
 mySelectAll:
-[User(id=1, username=alpha, realName=null), User(id=2, username=beta, realName=null)]
-2018-12-24 20:52:01.569  INFO 35138 --- [      Thread-13] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4135c3b: startup date [Mon Dec 24 20:51:57 CST 2018]; root of context hierarchy
-2018-12-24 20:52:01.572  INFO 35138 --- [      Thread-13] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2018-12-24 20:52:01.573  INFO 35138 --- [      Thread-13] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
-2018-12-24 20:52:01.576  INFO 35138 --- [      Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2018-12-24 20:52:01.602  INFO 35138 --- [      Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-
-Process finished with exit code 0
+2018-12-25 10:12:00.869 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.myFindAll        : ==>  Preparing: SELECT * FROM user 
+2018-12-25 10:12:00.869 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.myFindAll        : ==> Parameters: 
+2018-12-25 10:12:00.872 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.myFindAll        : <==      Total: 4
+[User(id=1, username=alpha, realName=null), User(id=2, username=beta, realName=null), User(id=3, username=gamma, realName=null), User(id=4, username=DeFaUlT, realName=null)]
+Real name is null:
+2018-12-25 10:12:00.888 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectByExample  : ==>  Preparing: SELECT id,username,real_name FROM user WHERE ( ( real_name is null ) ) 
+2018-12-25 10:12:00.889 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectByExample  : ==> Parameters: 
+2018-12-25 10:12:00.890 DEBUG 37343 --- [           main] bj.tkmybatis.UserMapper.selectByExample  : <==      Total: 2
+[User(id=3, username=gamma, realName=null), User(id=4, username=DeFaUlT, realName=null)]
+2018-12-25 10:12:00.949  INFO 37343 --- [      Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-12-25 10:12:00.975  INFO 37343 --- [      Thread-17] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 ```
 
 ### 注意

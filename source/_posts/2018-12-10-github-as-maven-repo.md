@@ -125,4 +125,23 @@ Or use token to replace username and password
 
 <!--more-->
 
+## 最佳方案
+
+上种方案完全没有存在的必要，直接创建仓库，将本机编译好的jar包放进去就好了
+
+### 客户端使用
+
+```xml
+<repository>
+    <id>baijifeilong</id>
+    <url>https://raw.github.com/baijifeilong/repo/mvn</url>
+</repository>```
+
+### 服务端部署
+
+1. `mvn install`
+2. `cp -r ... .`
+3. `git add --all && git commit -m 'something'`
+3. `git push origin mvn`
+
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)

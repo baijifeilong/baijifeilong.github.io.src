@@ -67,6 +67,10 @@ public class App implements ApplicationListener<ApplicationReadyEvent> {
 
 ```
 
+注意:
+
+- AspectJ只能拦截Spring容器创建的对象，自己new出来的不行，代理不了
+
 <!--more-->
 
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)
