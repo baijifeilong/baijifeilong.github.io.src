@@ -22,4 +22,16 @@ tags:
 
 FiraCode字体支持连字。在换用FiraCode字体后，还需要在字体选项中启用连字(Enable font igatures)
 
+## 3. Jetbrains常用插件:
+
+- BashSupport
+- Close All Processes
+- CodeGlance
+- Grep Console
+- JRebel for IntelliJ
+- Key Promoter X
+- Lombok Plugin
+- Nyan Progress Bar
+- String Manipulation
+
 ![Jetbrains IDEA use attention](/images/jetbrains-idea-use-attention.jpg)
