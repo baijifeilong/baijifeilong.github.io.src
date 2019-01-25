@@ -77,7 +77,6 @@
         if (!keyword) return;
         document.getElementById("google-china").src = "https://www.google.com/search?lr=lang_zh-CN&q=" + keyword;
         document.getElementById("google-world").src = "https://www.google.com/search?lr=lang_en-US&q=" + keyword;
-        document.getElementById("input").value = "";
     });
     document.getElementById("input").addEventListener("keyup", function (ev) {
         console.log("ev", ev);
