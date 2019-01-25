@@ -55,7 +55,7 @@
 <body>
 <div id="frames">
     <iframe id="google-china" src="https://www.google.com/search?q=google&lr=lang_zh-CN"></iframe>
-    <iframe id="google-world" src="https://www.google.com/search?q=google"></iframe>
+    <iframe id="google-world" src="https://www.google.com/search?q=google&lr=lang_en-US"></iframe>
 </div>
 <div id="controls">
     <input id="input" title="keyword" style="font-size: 1rem">
@@ -75,8 +75,8 @@
     document.getElementById("search").addEventListener("click", function () {
         const keyword = document.getElementById("input").value;
         if (!keyword) return;
-        document.getElementById("google-world").src = "https://www.google.com/search?q=" + keyword;
         document.getElementById("google-china").src = "https://www.google.com/search?lr=lang_zh-CN&q=" + keyword;
+        document.getElementById("google-world").src = "https://www.google.com/search?lr=lang_en-US&q=" + keyword;
         document.getElementById("input").value = "";
     });
     document.getElementById("input").addEventListener("keyup", function (ev) {
