@@ -7,7 +7,7 @@ tags:
   - Work
   - NodeJs
   - Electron
-  - Javascript
+  - JavaScript
 date: 2019-02-22 22:36:42
 ---
 
