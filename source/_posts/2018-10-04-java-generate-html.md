@@ -6,7 +6,9 @@ categories:
 tags:
   - Programming
   - Java
+  - Generator
   - HTML
+  - j2html
 date: 2018-10-04 01:24:56
 ---
 

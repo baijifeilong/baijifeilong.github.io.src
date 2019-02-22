@@ -7,7 +7,7 @@ categories:
 tags:
     - Application
     - Editor
-    - Sublime Text
+    - SublimeText
 ---
 
 ## 1. 安装主题Monokai Extended

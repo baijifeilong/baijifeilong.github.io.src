@@ -6,6 +6,7 @@ categories:
 tags:
   - Programming
   - Java
+  - Observalbe
 date: 2018-10-04 00:47:23
 ---
 

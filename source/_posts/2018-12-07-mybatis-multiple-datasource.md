@@ -2,8 +2,14 @@
 title: MyBatis多数据源的配置
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Database
+  - MyBatis
+  - Datasource
+  - SqlSessionFactory
 date: 2018-12-07 11:49:43
 ---
 

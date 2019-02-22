@@ -6,8 +6,9 @@ categories:
 tags:
   - Programming
   - Java
-  - SpringFramework
+  - Spring
   - Servlet
+  - SpringBoot
 date: 2018-10-04 00:32:57
 ---
 

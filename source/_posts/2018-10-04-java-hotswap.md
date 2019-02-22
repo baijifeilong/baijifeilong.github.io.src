@@ -7,6 +7,7 @@ tags:
   - Programming
   - Java
   - HotSwap
+  - JRebel
 date: 2018-10-04 00:52:13
 ---
 
@@ -61,3 +62,7 @@ IDEA的热部署
 对于HotSwap，需要Compile/Build + Reload
 
 对于JRebel，仅需要Compile/Build。 Reload操作会由JRebel通过磁盘监控自动完成
+
+## 备注:
+
+如果项目复杂，JRebel可能没重启快。慎用

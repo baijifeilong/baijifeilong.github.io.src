@@ -7,7 +7,7 @@ categories:
 tags:
     - Application
     - Editor
-    - Sublime Text
+    - SublimeText
 ---
 
 ## 主题

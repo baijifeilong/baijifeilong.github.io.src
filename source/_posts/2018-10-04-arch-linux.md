@@ -2,9 +2,12 @@
 title: ArchLinux大杂烩
 categories:
   - OS
+  - Linux
 tags:
   - OS
   - Linux
+  - ArchLinux
+  - Security
 date: 2018-10-04 00:38:54
 ---
 

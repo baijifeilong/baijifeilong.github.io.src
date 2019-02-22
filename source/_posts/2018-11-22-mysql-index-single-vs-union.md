@@ -2,10 +2,13 @@
 title: MySQL联合索引VS单列索引
 categories:
   - Programming
-  - MySQL
+  - SQL
 tags:
   - Programming
+  - SQL
   - MySQL
+  - Index
+  - Database
 date: 2018-11-22 11:36:45
 ---
 

@@ -8,6 +8,7 @@ tags:
   - Python
   - Database
   - ORM
+  - SQLAlchemy
 date: 2018-10-04 00:08:03
 ---
 

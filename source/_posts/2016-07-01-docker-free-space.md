@@ -3,9 +3,9 @@ layout: post
 title:  "释放 Docker 浪费掉的磁盘空间"
 date:   2016-07-01 16:56:22 +0800
 categories: 
-    - OS
-    - Docker
+    - Application
 tags:
+    - Application
     - Docker
     - Linux
 ---

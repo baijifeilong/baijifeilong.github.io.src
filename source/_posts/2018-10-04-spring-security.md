@@ -2,8 +2,13 @@
 title: SpringSecurity 大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - SpringBoot
+  - Security
 date: 2018-10-04 01:11:27
 ---
 **App.kt**

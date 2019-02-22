@@ -4,8 +4,9 @@ title:  "使用Maven创建工程并导出为IDE项目"
 date:   2016-07-06 21:41:16 +0800
 categories:
     - Programming
-    - Tools
+    - Java
 tags:
+    - Programming
     - Maven
     - Java
 ---

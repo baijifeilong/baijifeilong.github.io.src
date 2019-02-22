@@ -6,9 +6,10 @@ categories:
     - OS
     - Linux
 tags:
+    - OS
     - Linux
-    - GFW
-    - VPN
+    - Proxy
+    - PPTP
 ---
 
 服务器Linux往往不安装图形界面，在这种情况下，翻越防火长城就得通过命令行进行安装配置了。本文为笔者在Ubuntu下使用PPTP协议VPN翻墙的简要记录。

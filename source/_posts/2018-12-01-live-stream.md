@@ -1,9 +1,13 @@
 ---
 title: 直播协议大杂烩
 categories:
-  - Programming
+  - Application
 tags:
-  - Programming
+  - Application
+  - Live
+  - RTMP
+  - HLS
+  - JavaScript
 date: 2018-12-01 09:29:38
 ---
 

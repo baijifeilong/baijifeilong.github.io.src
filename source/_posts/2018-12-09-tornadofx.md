@@ -2,8 +2,17 @@
 title: TornadoFX大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Desktop
+  - GUI
+  - JavaFX
+  - Tutorial
+  - TornadoFX
+  - Kotlin
+  - HelloWorld
 date: 2018-12-09 19:54:48
 ---
 

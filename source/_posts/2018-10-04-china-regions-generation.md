@@ -2,8 +2,13 @@
 title: 使用SpringJdbc生成省市县三级JSON
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - JDBC
+  - Database
 date: 2018-10-04 01:31:51
 ---
 

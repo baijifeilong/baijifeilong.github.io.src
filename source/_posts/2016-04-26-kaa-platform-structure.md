@@ -4,8 +4,10 @@ title:  "物联网平台 Kaa 的技术架构（翻译）"
 date:   2016-04-26 15:31:12 +0800
 categories:
     - Programming
-    - IoT
+    - Java
 tags:
+    - Programming
+    - Java
     - IoT
     - Kaa
     - Translation

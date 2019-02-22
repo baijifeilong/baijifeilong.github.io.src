@@ -7,6 +7,9 @@ tags:
   - Programming
   - Java
   - Spring
+  - SpringBoot
+  - SpringCache
+  - Cache
 date: 2018-10-04 01:20:00
 ---
 

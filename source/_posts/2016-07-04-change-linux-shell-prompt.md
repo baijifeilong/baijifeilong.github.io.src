@@ -6,6 +6,7 @@ categories:
     - OS
     - Linux
 tags:
+    - OS
     - Linux
     - Shell
 ---

@@ -2,8 +2,13 @@
 title: GoogleJSON风格接口的Java实现
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Google
+  - JSON
+  - API
 date: 2018-10-04 01:03:05
 ---
 

@@ -4,6 +4,18 @@ categories:
   - Programming
 tags:
   - Programming
+  - GUI
+  - Desktop
+  - Windows
+  - Qt
+  - GTK
+  - wxWidgets
+  - MFC
+  - Win32
+  - WinForm
+  - Swing
+  - JavaFX
+  - WPF
 date: 2018-10-04 02:03:54
 ---
 

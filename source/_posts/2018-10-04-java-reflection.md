@@ -6,6 +6,8 @@ categories:
 tags:
   - Programming
   - Java
+  - Reflection
+  - Invoke
 date: 2018-10-04 00:42:14
 ---
 

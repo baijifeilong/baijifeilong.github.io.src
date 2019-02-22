@@ -6,9 +6,10 @@ categories:
     - Programming
     - Java
 tags:
+    - Programming
     - Java
     - Freemarker
-    - Template Engine
+    - TemplateEngine
 ---
 
 简要记录Freemarker的基本用法，以备参考。

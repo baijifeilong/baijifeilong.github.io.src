@@ -4,10 +4,14 @@ title:  "开源物联网平台 Kaa 简介（翻译）"
 date:   2016-04-21 09:37:35 +0800
 categories:
     - Programming
-    - IoT
+    - Java
 tags:
+    - Programming
+    - Java
     - IoT
     - Kaa
+    - Translation
+    - Document
     - Translation
     - Document
 ---

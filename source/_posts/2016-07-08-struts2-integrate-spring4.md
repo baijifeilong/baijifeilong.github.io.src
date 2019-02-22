@@ -6,6 +6,7 @@ categories:
     - Programming
     - Java
 tags:
+    - Programming
     - Java
     - Struts
     - Spring

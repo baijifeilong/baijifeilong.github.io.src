@@ -6,7 +6,9 @@ categories:
 tags:
   - Programming
   - SQL
+  - Database
   - MySQL
+  - Sharding
 date: 2018-11-27 13:34:47
 ---
 

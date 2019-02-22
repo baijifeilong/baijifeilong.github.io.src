@@ -6,6 +6,11 @@ categories:
 tags:
   - Programming
   - Java
+  - Spring
+  - SpringBoot
+  - Security
+  - Apache
+  - Shiro
 date: 2018-10-04 01:12:54
 ---
 

@@ -6,6 +6,11 @@ categories:
 tags:
   - Programming
   - ObjectiveC
+  - Windows
+  - GnuStep
+  - Linux
+  - HelloWorld
+  - Tutorial
 date: 2018-10-04 01:39:39
 ---
 

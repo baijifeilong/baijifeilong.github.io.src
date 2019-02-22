@@ -2,8 +2,14 @@
 title: Java播放多媒体
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Multimedia
+  - GST
+  - VLCJ
+  - macOS
 date: 2018-12-09 15:52:05
 ---
 

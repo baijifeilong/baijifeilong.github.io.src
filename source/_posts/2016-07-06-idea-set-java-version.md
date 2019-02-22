@@ -4,8 +4,9 @@ title:  "IDEA 设置 Java 版本"
 date:   2016-07-06 23:17:22 +0800
 categories:
     - Programming
-    - Tools
+    - Java
 tags:
+    - Programming
     - IDE
     - Java
 ---

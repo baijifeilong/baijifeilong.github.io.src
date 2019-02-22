@@ -1,11 +1,13 @@
 ---
 title: 一行代码学安卓
 date: 2017-09-26 15:41:54
-tags:
-	- Android
 categories:
 	- Programming
 	- Android
+tags:
+    - Programming
+	- Android
+    - RecyclerView
 ---
 
 ## RecyclerView

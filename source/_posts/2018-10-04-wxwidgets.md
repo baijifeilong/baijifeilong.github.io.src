@@ -6,6 +6,10 @@ categories:
 tags:
   - Programming
   - CPP
+  - Desktop
+  - GUI
+  - wxWidgets
+  - CMake
 date: 2018-10-04 01:48:07
 ---
 

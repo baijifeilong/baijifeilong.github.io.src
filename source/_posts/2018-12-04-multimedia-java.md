@@ -2,8 +2,12 @@
 title: Java处理多媒体文件
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Multimedia
+  - HumbleVideo
 date: 2018-12-04 20:56:48
 ---
 

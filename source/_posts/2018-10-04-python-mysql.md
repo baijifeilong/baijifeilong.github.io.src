@@ -7,6 +7,8 @@ tags:
   - Programming
   - Python
   - MySQL
+  - SQL
+  - Database
 date: 2018-10-04 00:03:22
 ---
 

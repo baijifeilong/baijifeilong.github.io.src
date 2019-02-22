@@ -6,6 +6,7 @@ categories:
     - Programming
     - C
 tags:
+    - Programming
     - C
     - Win32
     - GCC
