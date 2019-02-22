@@ -2,8 +2,13 @@
 title: SpringAOP大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - AOP
+  - Spring
+  - AspectJ
 date: 2018-12-10 21:00:44
 ---
 

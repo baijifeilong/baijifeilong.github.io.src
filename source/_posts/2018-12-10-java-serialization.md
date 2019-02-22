@@ -2,8 +2,11 @@
 title: Java对象序列化
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Serialization
 date: 2018-12-10 19:43:00
 ---
 

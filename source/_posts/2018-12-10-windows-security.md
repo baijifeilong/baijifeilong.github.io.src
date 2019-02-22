@@ -1,9 +1,12 @@
 ---
 title: Windows电脑安全防护技巧
 categories:
-  - Programming
+  - OS
+  - Windows
 tags:
-  - Programming
+  - OS
+  - Windows
+  - Security
 date: 2018-12-10 21:23:16
 ---
 

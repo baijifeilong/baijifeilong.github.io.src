@@ -2,8 +2,12 @@
 title: Github做Maven仓库
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Maven
+  - Repository
 date: 2018-12-10 21:02:30
 ---
 

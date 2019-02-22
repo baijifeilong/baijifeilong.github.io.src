@@ -2,8 +2,14 @@
 title: GStreamer大杂烩
 categories:
   - Programming
+  - C
 tags:
   - Programming
+  - C
+  - GStreamer
+  - Multimedia
+  - Tutorial
+  - Audio
 date: 2019-01-13 18:23:01
 ---
 

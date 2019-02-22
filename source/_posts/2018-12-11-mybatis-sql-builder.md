@@ -2,8 +2,13 @@
 title: MyBatisSQLBuilder
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - MyBatis
+  - SQL
+  - Database
 date: 2018-12-11 11:13:53
 ---
 

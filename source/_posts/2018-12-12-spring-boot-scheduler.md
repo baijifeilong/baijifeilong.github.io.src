@@ -2,8 +2,12 @@
 title: SpringBoot任务调度器
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - SpringBoot
 date: 2018-12-12 14:58:33
 ---
 

@@ -1,9 +1,13 @@
 ---
 title: 搬瓦工穿墙的最佳姿势
 categories:
-  - Programming
+  - OS
+  - Linux
 tags:
-  - Programming
+  - OS
+  - Linux
+  - Proxy
+  - Shadowsocks
 date: 2018-12-10 20:34:42
 ---
 

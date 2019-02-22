@@ -2,8 +2,12 @@
 title: SpringBoot配置
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - SpringBoot
 date: 2018-12-10 15:38:17
 ---
 

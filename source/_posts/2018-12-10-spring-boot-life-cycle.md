@@ -2,8 +2,13 @@
 title: SpringBoot生命周期
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - SpringBoot
+  - LifeCycle
 date: 2018-12-10 21:08:22
 ---
 

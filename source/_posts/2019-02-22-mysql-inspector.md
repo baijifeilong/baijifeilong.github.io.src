@@ -1,13 +1,16 @@
 ---
-title: MySQL透视器
+title: MySQL透视器，大型MySQL数据库透视工具
 categories:
-  - Programming
+  - Work
+  - Python
 tags:
-  - Programming
+  - Work
+  - Python
+  - MySQL
+  - Web
+  - BigData
 date: 2019-02-22 16:20:36
 ---
-
-# MySQL透视器
 
 MySQL是互联网公司数据库的标配，也几乎成为了关系型数据库事实上的标准。
 
@@ -33,5 +36,9 @@ MySQL透视器的优点:
 
 - [数据库透视](/raw/database.html)
 - [数据表透视](/raw/table.html)
+
+## MySQL透视器源码
+
+- [Github](https://github.com/baijifeilong/mysql-inspector)
 
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)

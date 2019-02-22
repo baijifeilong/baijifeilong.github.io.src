@@ -2,8 +2,12 @@
 title: JavaAssist大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - JavaAssist
+  - ByteCode
 date: 2018-12-10 21:10:57
 ---
 

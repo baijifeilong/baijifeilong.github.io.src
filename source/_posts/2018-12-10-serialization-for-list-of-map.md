@@ -2,8 +2,11 @@
 title: serialization-for-list-of-map
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Serialization
 date: 2018-12-10 20:10:16
 ---
 

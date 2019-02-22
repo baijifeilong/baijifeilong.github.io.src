@@ -2,8 +2,12 @@
 title: SpringValidator
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Spring
+  - Validator
 date: 2018-12-13 15:07:11
 ---
 

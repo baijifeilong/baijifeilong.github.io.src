@@ -2,8 +2,11 @@
 title: Java对象工具类
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Object
 date: 2018-12-12 17:34:43
 ---
 

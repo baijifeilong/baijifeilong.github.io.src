@@ -2,8 +2,11 @@
 title: Java动态代理
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - DynamicProxy
 date: 2018-12-10 21:14:19
 ---
 

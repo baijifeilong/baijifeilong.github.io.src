@@ -1,9 +1,12 @@
 ---
 title: 自用梭子
 categories:
-  - Programming
+  - Work
+  - Python
 tags:
-  - Programming
+  - Work
+  - Python
+  - Proxy
 date: 2018-12-10 20:42:15
 ---
 

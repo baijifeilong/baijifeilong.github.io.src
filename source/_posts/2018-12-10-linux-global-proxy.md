@@ -1,9 +1,16 @@
 ---
 title: Linux全局代理
 categories:
-  - Programming
+  - OS
+  - Linux
 tags:
-  - Programming
+  - OS
+  - Linux
+  - Redsocks
+  - PCap
+  - DNS
+  - DNSProxy
+  - IPTables
 date: 2018-12-10 20:33:17
 ---
 

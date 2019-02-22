@@ -2,8 +2,12 @@
 title: Hibernate大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Database
+  - Hibernate
 date: 2018-12-10 20:56:48
 ---
 

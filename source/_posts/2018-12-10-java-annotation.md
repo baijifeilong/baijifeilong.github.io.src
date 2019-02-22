@@ -2,8 +2,11 @@
 title: Java注解大杂烩
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Annotation
 date: 2018-12-10 21:13:05
 ---
 

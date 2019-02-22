@@ -2,8 +2,12 @@
 title: Linux全局代理跳过国内IP
 categories:
   - OS
+  - Linux
 tags:
   - OS
+  - Linux
+  - Proxy
+  - Ipset
 date: 2018-12-10 20:31:45
 ---
 

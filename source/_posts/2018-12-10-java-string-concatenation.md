@@ -2,8 +2,12 @@
 title: Java字符串连接
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - String
+  - Benchmark
 date: 2018-12-10 20:21:40
 ---
 

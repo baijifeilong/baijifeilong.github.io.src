@@ -1,9 +1,16 @@
 ---
 title: Ghost版Windows7在GPT分区的安装
 categories:
-  - Programming
+  - OS
+  - Windows
 tags:
-  - Programming
+  - OS
+  - Windows
+  - Ghost
+  - GPT
+  - Window7
+  - bcdboot
+  - UEFI
 date: 2018-12-10 21:24:25
 ---
 

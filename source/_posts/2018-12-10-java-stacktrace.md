@@ -2,8 +2,12 @@
 title: Stacktrace
 categories:
   - Programming
+  - Java
 tags:
   - Programming
+  - Java
+  - Stacktrace
+  - Exception
 date: 2018-12-10 20:18:06
 ---
 
