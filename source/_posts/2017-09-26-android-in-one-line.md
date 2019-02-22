@@ -6,7 +6,7 @@ categories:
 	- Android
 tags:
     - Programming
-	- Android
+    - Android
     - RecyclerView
 ---
 
