@@ -2,7 +2,7 @@
 title: 冰泉音乐，最纯的播放器给最纯的你
 categories:
   - Work
-  - NodeJs
+  - Javascript
 tags:
   - Work
   - NodeJs
