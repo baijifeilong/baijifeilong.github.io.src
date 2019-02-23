@@ -12,8 +12,6 @@ tags:
 date: 2018-12-10 21:08:22
 ---
 
-# SpringBoot生命周期
-
 **/META-INF/spring.factories**
 ```
 # 必须在这里指明，否则不生效

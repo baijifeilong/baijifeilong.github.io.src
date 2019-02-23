@@ -13,13 +13,15 @@ tags:
 date: 2019-01-13 18:23:01
 ---
 
-# GStreamer大杂烩
+GStreamer是一个使用C语言编写的多媒体框架，主要用于音视频的播放与编辑
 
 ## GStreamer安装
 
+以macOS为例:
+
 `brew install gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly`
 
-## GStreamer配置
+## GStreamer的CMake配置
 
 ```CMakeList
 cmake_minimum_required(VERSION 3.13)
@@ -47,7 +49,7 @@ target_link_libraries(untitled1 ${GST_LIBRARIES})
 
 ## 用GStreamer播放音乐文件(MP3、WMA与OGG)
 
-GStreamer播放多媒体文件需要指定解码器。
+GStreamer播放多媒体文件需要指定解码器。WMA与OGG都是容器格式，需要特殊处理 
 
 ```c
 #include <gst/gst.h>
@@ -178,7 +180,7 @@ int main(int argc, char *argv[]) {
 
 ```
 
-## GStreamer播放媒体文件(高度抽象)
+## GStreamer直接播放媒体文件(PlayBin)
 
 ```c
 #include <gst/gst.h>

@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 20:21:40
 ---
 
-# Java字符串连接
-
 Java字符串连接，常用的类有`StringBuffer`和`StringBuilder`。StringBuilder非线程安全，运行效率更高
 
 <!--more-->

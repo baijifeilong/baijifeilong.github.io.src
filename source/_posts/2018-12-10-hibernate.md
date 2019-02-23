@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 20:56:48
 ---
 
-# Hibernate大杂烩
-
 ## SpringBoot集成Hibernate
 
 *App.java*

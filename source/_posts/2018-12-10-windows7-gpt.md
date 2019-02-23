@@ -14,8 +14,6 @@ tags:
 date: 2018-12-10 21:24:25
 ---
 
-# Ghost版Windows7在GPT分区的安装
-
 **安装步骤**
 
 1. 准备Ghost镜像，有些Ghost镜像需要外置驱动包，最好放到`D:\Drv`目录

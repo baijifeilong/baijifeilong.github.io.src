@@ -10,8 +10,6 @@ tags:
 date: 2018-12-10 20:42:15
 ---
 
-# 自用梭子
-
 ```python
 import multiprocessing
 import random

@@ -28,6 +28,8 @@ add_executable(hellogl ${SOURCE_FILES})
 target_link_libraries(hellogl glfw3)
 ```
 
+<!--more-->
+
 **utils.h**
 ```c
 #ifndef HELLOGL_UTILS_H

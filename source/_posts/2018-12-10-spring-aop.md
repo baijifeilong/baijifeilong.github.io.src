@@ -12,8 +12,6 @@ tags:
 date: 2018-12-10 21:00:44
 ---
 
-# SpringAOP大杂烩
-
 ## 示例代码
 
 *App.java*

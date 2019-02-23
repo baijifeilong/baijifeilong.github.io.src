@@ -12,11 +12,11 @@ tags:
 date: 2018-11-26 14:45:46
 ---
 
-# ShardingJDBC大杂烩
-
 ## ShardingJDBC是什么
 
 ShardingJDBC是一个数据库分库分表框架，它通过实现自定义的`javax.sql.DataSource`接口，将分库分表的逻辑封装在了里头，让客户端可以通过`JDBC`相对透明地访问分片数据库。但是，分片数据库有其固有之局限性，需要谨慎使用。
+
+<!--more-->
 
 ## ShardingJDBC快速入门示例
 
@@ -66,7 +66,6 @@ ShardingJDBC是一个数据库分库分表框架，它通过实现自定义的`j
 </project>
 ```
 
-<!--more-->
 
 ### 2. 创建数据表
 

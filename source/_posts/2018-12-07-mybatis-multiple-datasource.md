@@ -13,8 +13,6 @@ tags:
 date: 2018-12-07 11:49:43
 ---
 
-# MyBatis多数据源的配置
-
 MyBatis多数据源的配置主要有两种方式:
 
 1. 通过@MapperScan注解，对不同包下的Mapper使用不同的sqlSessionFactory

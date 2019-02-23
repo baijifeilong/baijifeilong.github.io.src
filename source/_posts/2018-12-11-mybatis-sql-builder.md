@@ -12,8 +12,6 @@ tags:
 date: 2018-12-11 11:13:53
 ---
 
-# MyBatisSQLBuilder
-
 在MyBatis中，可以使用SQLBuilder用Java代码动态构建SQL语句
 
 <!--more-->

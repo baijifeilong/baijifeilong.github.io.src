@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 20:34:42
 ---
 
-# 搬瓦工穿墙的最佳姿势
-
 ## 一、帐号注册
 
 没有邀请码机制，直接注册即可。需要填写大量信息，或真或假都可以
@@ -23,14 +21,16 @@ date: 2018-12-10 20:34:42
 
 目前配置如下
 
-> 10G VPS
-> SSD: 10 GB RAID-10
-> RAM: 512 MB
-> CPU: 1x Intel Xeon
-> Transfer: 500 GB/mo
-> Link speed: 1 Gigabit
-> Multiple locations
-> $19.99/year
+```log
+10G VPS
+SSD: 10 GB RAID-10
+RAM: 512 MB
+CPU: 1x Intel Xeon
+Transfer: 500 GB/mo
+Link speed: 1 Gigabit
+Multiple locations
+$19.99/year
+```
 
 ## 三、服务器机房选择
 

@@ -11,7 +11,7 @@ tags:
 date: 2018-12-13 15:07:11
 ---
 
-# SpringValidator
+SpringValidator是Spring数据校验框架
 
 <!--more-->
 

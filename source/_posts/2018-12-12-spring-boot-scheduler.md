@@ -11,8 +11,6 @@ tags:
 date: 2018-12-12 14:58:33
 ---
 
-# SpringBoot任务调度器
-
 SpringBoot自带了任务调度器，通过注解的方式使用。
 
 启用方式: 在配置类上注解`org.springframework.scheduling.annotation.EnableScheduling`

@@ -16,7 +16,9 @@ tags:
 date: 2018-10-04 01:33:14
 ---
 
-Spring Boot 项目生成 HTML格式的API文档
+在SpringBoot项目中，可以利用Swagger生成HTML格式的API文档
+
+<!--more-->
 
 ## 用到的依赖
 

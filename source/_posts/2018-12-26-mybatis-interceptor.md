@@ -11,7 +11,7 @@ tags:
 date: 2018-12-26 15:46:00
 ---
 
-MyBatis拦截器演示
+MyBatis拦截器，即拦截处理MyBatis生命周期的工具
 
 <!--more-->
 

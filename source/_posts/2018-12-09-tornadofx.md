@@ -16,8 +16,6 @@ tags:
 date: 2018-12-09 19:54:48
 ---
 
-# TornadoFX大杂烩
-
 TornadoFX是为Kotlin语言准备的JavaFX开发框架
 
 ## 开发环境配置

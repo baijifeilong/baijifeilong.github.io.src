@@ -11,8 +11,6 @@ tags:
 date: 2018-12-04 20:56:48
 ---
 
-# Java处理多媒体文件
-
 ## 1. HumbleVideo
 
 [HumbleVideo](https://github.com/artclarke/humble-video)是Java界比较活跃的多媒体处理库

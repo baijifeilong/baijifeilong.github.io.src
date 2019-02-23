@@ -12,8 +12,6 @@ tags:
 date: 2018-12-10 21:06:47
 ---
 
-# Servlet过滤器大杂烩
-
 ## 示例代码
 
 **DemoApp.java**

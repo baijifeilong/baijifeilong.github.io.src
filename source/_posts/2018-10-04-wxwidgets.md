@@ -22,6 +22,7 @@ wxWidgets的CMake文件不识别MinGW，不能直接使用MinGW里装好的wxWid
 3. Clean `mingw32-make -f makefile.gcc SHARED=1 UNICODE=1 BUILD=release clean`
 4. 编译 `mingw32-make -f makefile.gcc -j 8 SHARED=1 UNICODE=1 BUILD=release`，其中`-j 8`表示八核并行编译。i7-4710MQ大概需要5分钟。
 
+<!--more-->
 
 **CMakeLists.txt**
 ```cmake

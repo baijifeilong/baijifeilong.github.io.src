@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 20:18:06
 ---
 
-# Stacktrace
-
 Java可以通过`Thread.getAllStackTraces()`方法获取当前应用各线程的栈追踪
 
 <!--more-->

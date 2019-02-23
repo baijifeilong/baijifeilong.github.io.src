@@ -14,8 +14,6 @@ tags:
 date: 2018-12-10 20:33:17
 ---
 
-# Linux全局代理
-
 Linux的全局代理需要通过iptables配置
 
 以ArchLinux为例

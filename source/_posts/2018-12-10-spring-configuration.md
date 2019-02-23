@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 15:38:17
 ---
 
-# SpringBoot配置
-
 SpringBoot可以将配置文件(.properties或.yaml)与实体Bean绑定起来
 
 ## 示例配置文件

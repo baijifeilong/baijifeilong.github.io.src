@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 13:57:40
 ---
 
-# Java线程池
-
 Java线程池(`java.util.concurrent.ThreadPoolExecutor`)实现了接口`java.util.concurrent.ExecutorService`，将线程资源缓存起来，实现了线程的复用。
 
 <!--more-->

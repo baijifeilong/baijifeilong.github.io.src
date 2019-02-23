@@ -11,8 +11,6 @@ tags:
 date: 2018-12-10 20:31:45
 ---
 
-# Linux全局代理跳过国内IP
-
 ## 1. 安装ipset
 
 `sudo pacman -S ipset`

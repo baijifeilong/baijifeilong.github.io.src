@@ -8,8 +8,6 @@ tags:
 date: 2018-12-05 20:14:16
 ---
 
-# Supervisor大杂烩
-
 ## Supervisor是什么
 
 [Supervisor](https://github.com/Supervisor/supervisor)是类UNIX系统上的一个进程管理工具，用于进程的批量启动、停止、配置、守护与监控。Supervisor默认情况下会自动重启挂掉的进程
