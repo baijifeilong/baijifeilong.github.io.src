@@ -82,4 +82,61 @@ for i in range(5000):
 4001: y=2.000005484x+1.999973178 => 0.000000001114
 ```
 
+## HelloWorld之NumPy版本
+
+```python
+import tensorflow as tf
+import numpy as np
+
+# 以公式(y=2x+2)构造包含10个元素的点集
+points = np.array([(x, 2 * x + 2) for x in range(11) if x is not 0])
+print(f"Points: \n{points}")
+
+xData = points[:, 0]
+yData = points[:, 1]
+print(f"X-Axis: {xData}\nY-Axis: {yData}")
+
+# 直线的斜截式方程: y = Ax + B
+# Ax + B - y 越接近0，直线越拟合点集
+A = tf.Variable(0.0)  # 斜率
+B = tf.Variable(0.0)  # 截距
+
+train = tf.train.GradientDescentOptimizer(0.001).minimize(tf.reduce_sum(tf.square(A * xData + B - yData)))
+
+sess = tf.Session()
+sess.run(tf.global_variables_initializer())
+for _ in range(1000):
+    if _ % 100 is 0:
+        print(f"{_:03} A = {sess.run(A):.9f}, B = {sess.run(B):.9f}")
+    sess.run(train)
+```
+
+### 控制台输出:
+
+```log
+Points:
+[[ 1  4]
+ [ 2  6]
+ [ 3  8]
+ [ 4 10]
+ [ 5 12]
+ [ 6 14]
+ [ 7 16]
+ [ 8 18]
+ [ 9 20]
+ [10 22]]
+X-Axis: [ 1  2  3  4  5  6  7  8  9 10]
+Y-Axis: [ 4  6  8 10 12 14 16 18 20 22]
+000 A = 0.000000000, B = 0.000000000
+100 A = 2.158243656, B = 0.898336709
+200 A = 2.103886366, B = 1.276762247
+300 A = 2.068200827, B = 1.525196910
+400 A = 2.044773579, B = 1.688293815
+500 A = 2.029393673, B = 1.795366049
+600 A = 2.019296646, B = 1.865659118
+700 A = 2.012668371, B = 1.911805630
+800 A = 2.008316755, B = 1.942100525
+900 A = 2.005459785, B = 1.961989641
+```
+
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)
