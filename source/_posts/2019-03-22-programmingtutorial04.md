@@ -63,6 +63,12 @@ IDE一般提供这些功能：代码编辑、代码搜索、代码分析、代�
 
 在原来的控制台窗口中，打`python app.py`，应该也能看到"Hello World"的输出。
 
+`PyCharm`比较重要的几个快捷键：
+
+- `Ctrl + 鼠标左键` 可见跳到符号(变量、方法、类)的定义处
+- `Ctrl + Alt + 左箭头` 可以跳到光标上次停留的地方
+- `Ctrl + Alt + L` 格式化代码
+
 ## 4. HelloWorld
 
 但是，这个HelloWorld仅仅是一个控制台版的HelloWorld。我们要做的是一个带窗口的HelloWorld。
