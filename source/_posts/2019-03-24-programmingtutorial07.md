@@ -192,4 +192,8 @@ app.exec()
 15. `[function(x) for x in y]`这种语法叫生成器，可以用来将一个列表中的元素经过处理一一映射到另一个列表。我们也可以利用这种语法，将需要写两行的`for x in y: function(x)`语法压缩到一行。
 16. `"\n".join(字符串列表)`这种语法可以用特定的字符连接多个字符串。
 
+最后附截图一张:
+
+![五个段子](https://raw.githubusercontent.com/baijifeilong/resources/master/snapshots/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202019-03-24%2021.37.32.png)
+
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)
