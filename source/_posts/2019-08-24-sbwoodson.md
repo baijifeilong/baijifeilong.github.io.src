@@ -4,10 +4,18 @@ categories:
   - Programming
 tags:
   - Programming
+keywords:
+  - 木子雨霖
+  - 奸商
+  - 眼镜店
+  - 眼镜
+  - 春晖园
+  - 西北旺
+  - 李霖
+  - 蓝天
+  - 黑店
 date: 2019-08-24 16:11:38
 ---
-
-# 曝光北京春晖园附近一个配眼镜的黑店：木子雨霖
 
 北京市海淀区德政路67号，春晖园附近，有一家超级黑的眼镜店，叫木子雨霖。店主李霖不仅超级黑，而且全家都超恶心。
 
@@ -64,5 +72,10 @@ date: 2019-08-24 16:11:38
 我他妈新买的镜框，你二话没说就偷偷给上一刀，真他妈不要脸！！！
 
 祝愿天下奸商都能出门被车撞死，走之前给自己积一个大德！
+
+- 黑店 木子雨霖 地址 德政路67号
+- 奸商 李霖 微信 昵称 蓝天，座机 010-62720015
+
+![被削过的镜框](https://raw.githubusercontent.com/baijifeilong/resources/master/woodson/1.jpg)
 
 文章首发: [https://baijifeilong.github.io](https://baijifeilong.github.io)
