@@ -80,4 +80,4 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/baijifeilong/baijifeilong.github.io.git
+  repo: git@github.com:baijifeilong/baijifeilong.github.io.git
